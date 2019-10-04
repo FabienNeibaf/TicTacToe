@@ -1,9 +1,8 @@
 # TIC TAC TOE
 
 Try out this cute TIC TAC TOE game.  
-The game can be played by two players taking turn to position their markers inside a grid of 9 cells.
-Or you can test your skills by playing against the computer. Let's see if you can bit it.  
-The project is simple but lay down a solid structure for a more complex web app.  
+The game can be played by two players taking turn to position their markers inside a grid of 9 cells.  
+The project is simple but lay down a solid structure for a more complex web app. It leverages the event driven development pattern.  
 It is part of [microverse](https://www.microverse.org/) curriculum.
 
 # Set up
