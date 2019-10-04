@@ -8,7 +8,7 @@ module.exports = {
   },
   devtool: 'eval-source-map',
   devServer: {
-    contentBase: path.resolve(__dirname, 'dist'),
+    contentBase: __dirname,
   },
   mode: 'development',
   module: {
