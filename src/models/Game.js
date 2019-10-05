@@ -20,6 +20,7 @@ const Game = (player1, player2) => {
   const players = [Player(1, player1), Player(2, player2)];
   const checkWinner = () => {
     const [player1, player2] = players;
+    // eslint-disable-next-line no-restricted-syntax
     for (const pos of WINPOS) {
       if (csvals(pos, player1.moves)) {
         winpos = pos;
@@ -86,9 +87,6 @@ const Game = (player1, player2) => {
     },
     get players() {
       return players;
-    },
-    get winners() {
-      return winners;
     },
   };
 };

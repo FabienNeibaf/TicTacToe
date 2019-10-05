@@ -13,7 +13,7 @@ const Quit = console => {
             console.start();
           },
         },
-        'YES',
+        'YES'
       ),
       el(
         'button',
@@ -22,7 +22,7 @@ const Quit = console => {
             quit.parentNode.removeChild(quit);
           },
         },
-        'NO',
+        'NO'
       ),
     ]),
   ]);

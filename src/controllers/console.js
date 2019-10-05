@@ -23,7 +23,7 @@ const Console = (() => {
   };
   const makeMove = i => {
     const move = game.nextMove(i);
-    const winner = game.winner;
+    const { winner } = game;
     if (winner) {
       fire({ type: 'winner' });
     } else {

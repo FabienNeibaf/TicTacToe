@@ -2,8 +2,8 @@ import Brand from './Brand';
 import Footer from './Footer';
 import { el } from '../utils';
 
-export const PlayersForm = console => {
-  return el('section', { id: 'form' }, [
+const PlayersForm = console =>
+  el('section', { id: 'form' }, [
     Brand(),
     el(
       'form',
@@ -25,10 +25,9 @@ export const PlayersForm = console => {
         ]),
         el('div', { class: 'separator' }),
         el('input', { type: 'submit', value: 'GO' }),
-      ],
+      ]
     ),
     Footer(),
   ]);
-};
 
 export default PlayersForm;

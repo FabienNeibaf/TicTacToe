@@ -18,8 +18,8 @@ const Player = (role, console) => {
   ]);
 };
 
-const Main = console => {
-  return el('main', null, [
+const Main = console =>
+  el('main', null, [
     el('aside', { class: 'left' }, [
       el(
         'button',
@@ -28,7 +28,7 @@ const Main = console => {
             console.restart();
           },
         },
-        'Restart',
+        'Restart'
       ),
       el(
         'button',
@@ -37,7 +37,7 @@ const Main = console => {
             console.replay();
           },
         },
-        'Play again',
+        'Play again'
       ),
       el(
         'button',
@@ -46,16 +46,14 @@ const Main = console => {
             console.quit();
           },
         },
-        'Quit',
+        'Quit'
       ),
     ]),
     el('main', { class: 'middle' }, [Status(console), Gameboard(console)]),
     el('aside', { class: 'right' }, [Player(1, console), Player(2, console)]),
   ]);
-};
 
-export const Scene = console => {
-  return el('section', { id: 'scene' }, [Brand(), Main(console), Footer()]);
-};
+const Scene = console =>
+  el('section', { id: 'scene' }, [Brand(), Main(console), Footer()]);
 
 export default Scene;

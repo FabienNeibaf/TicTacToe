@@ -2,8 +2,8 @@ import Brand from './Brand';
 import Footer from './Footer';
 import { el } from '../utils';
 
-export const Home = console => {
-  return el('section', { id: 'home' }, [
+const Home = console =>
+  el('section', { id: 'home' }, [
     Brand(),
     el(
       'main',
@@ -15,11 +15,10 @@ export const Home = console => {
             console.initGame();
           },
         },
-        'Start Game',
-      ),
+        'Start Game'
+      )
     ),
     Footer(),
   ]);
-};
 
 export default Home;

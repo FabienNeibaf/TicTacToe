@@ -11,14 +11,17 @@ const Gameboard = console => {
           if (move) e.target.innerHTML = move;
         },
       },
-      move,
-    ),
+      move
+    )
   );
+
   console.subscribe(e => {
     if (e.type === 'winner') {
       game.winpos.forEach(i => gameboard[i - 1].classList.add('winpos'));
     } else if (e.type === 'replay' || e.type === 'restart') {
-      gameboard.forEach(child => (child.innerHTML = ''));
+      gameboard.forEach(child => {
+        child.innerHTML = '';
+      });
       gameboard.forEach(child => child.classList.remove('winpos'));
     }
   });
