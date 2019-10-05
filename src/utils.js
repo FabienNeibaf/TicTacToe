@@ -32,9 +32,11 @@ export const el = (type, props, children) => {
     });
   }
   if (children !== undefined) {
-    if (Array.isArray(children))
+    if (Array.isArray(children)) {
       children.forEach(child => node.appendChild(coerce(child)));
-    else node.appendChild(coerce(children));
+    } else {
+      node.appendChild(coerce(children));
+    }
   }
   return node;
 };

@@ -6,7 +6,7 @@ const Game = (player1, player2) => {
   let status = '';
   let winner = null;
   let winpos = null;
-  let state = Array(9).fill(null);
+  let board = Array(9).fill(null);
   const WINPOS = [
     [1, 2, 3],
     [4, 5, 6],
@@ -32,43 +32,48 @@ const Game = (player1, player2) => {
     }
     return null;
   };
-  const nextPlayer = () => (moves % 2 == 0 ? players[0] : players[1]);
+  const nextPlayer = () => (moves % 2 === 0 ? players[0] : players[1]);
   const nextMove = i => {
     if (winner) return null;
-    let move = state[i];
+    let move = board[i];
     if (move) return move;
     nextPlayer().addMove(i);
-    move = moves % 2 == 0 ? 'X' : 'O';
+    move = moves % 2 === 0 ? 'X' : 'O';
     moves += 1;
     winner = checkWinner();
     if (winner) {
       winner.score += 1;
       status = `${winner.name} win the game`;
     } else if (moves === 9) {
-      status = `drawn game`;
+      status = 'drawn game';
     } else {
       status = `Next Player: ${nextPlayer().name}`;
     }
-    return (state[i] = move);
+    board[i] = move;
+    return move;
   };
   const replay = () => {
     moves = 0;
     winner = null;
-    state = Array(9).fill(null);
+    board = Array(9).fill(null);
     status = `Next Player: ${nextPlayer().name}`;
-    players.forEach(player => (player.moves = []));
+    players.forEach(player => {
+      player.moves = [];
+    });
   };
   const restart = () => {
     replay();
-    players.forEach(player => (player.score = 0));
+    players.forEach(player => {
+      player.score = 0;
+    });
   };
   return {
     replay,
     restart,
     nextMove,
     nextPlayer,
-    get state() {
-      return state;
+    get board() {
+      return board;
     },
     get status() {
       return status;

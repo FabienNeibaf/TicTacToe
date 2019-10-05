@@ -1,8 +1,8 @@
-import Board from './Board';
 import Brand from './Brand';
 import Status from './Status';
 import Footer from './Footer';
 import { el } from '../utils';
+import Gameboard from './Gameboard';
 
 const Player = (role, console) => {
   const player = console.game.players[role - 1];
@@ -49,7 +49,7 @@ const Main = console => {
         'Quit',
       ),
     ]),
-    el('main', { class: 'middle' }, [Status(console), Board(console)]),
+    el('main', { class: 'middle' }, [Status(console), Gameboard(console)]),
     el('aside', { class: 'right' }, [Player(1, console), Player(2, console)]),
   ]);
 };
