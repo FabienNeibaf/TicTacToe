@@ -4,11 +4,12 @@ module.exports = {
   entry: './src/index.js',
   output: {
     filename: 'main.js',
+    publicPath: '/TicTacToe/',
     path: path.resolve(__dirname, 'dist'),
   },
   devtool: 'eval-source-map',
   devServer: {
-    contentBase: __dirname,
+    contentBase: path.resolve(__dirname, 'dist'),
   },
   mode: 'development',
   module: {
