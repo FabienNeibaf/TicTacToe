@@ -5,6 +5,8 @@ The game can be played by two players taking turn to position their markers insi
 The project is simple but lay down a solid structure for a more complex web app. It leverages the event driven development pattern.  
 It is part of [microverse](https://www.microverse.org/) curriculum.
 
+![TicTacToe](https://github.com/FabienNeibaf/Portfolio/blob/master/src/images/TicTacToe.png)
+
 # Set up
 
 To run the project:
